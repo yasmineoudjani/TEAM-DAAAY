@@ -1,8 +1,8 @@
 class Robot:
 	def __init__(self,image):
 		self.image = image
-		self.x = 0
-		self.y = 0
+		self.x = 1
+		self.y = 1
 		self.vitesse = 0
 		self.sensX = 1
 		self.sensY = 0
