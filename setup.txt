@@ -1,0 +1,7 @@
+pour installer une librairie sur les pc de la fac sans les droits administrateur :
+
+pip install --user package_name
+
+puisque nous utilisons pygame :
+
+pip install --user pygame
