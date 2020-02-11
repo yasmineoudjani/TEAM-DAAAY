@@ -1,18 +1,18 @@
-"""Classes du jeu de Labyrinthe Donkey Kong"""
+
 
 import pygame
 from pygame.locals import * 
 from constantes import *
 
 class Arene:
-	"""Classe permettant de créer un niveau"""
+	"""Classe permettant de créer une arene"""
 	def __init__(self, fichier):
 		self.fichier = fichier
 		self.structure = 0
 	
 	
 	def generer(self):
-		"""Méthode permettant de générer le niveau en fonction du fichier.
+		"""Méthode permettant de générer le terrain en fonction du fichier.
 		On crée une liste générale, contenant une liste par ligne à afficher"""	
 		#On ouvre le fichier
 		with open(self.fichier, "r") as fichier:
@@ -33,7 +33,7 @@ class Arene:
 	
 	
 	def afficher(self, fenetre):
-		"""Méthode permettant d'afficher le niveau en fonction 
+		"""Méthode permettant d'afficher le terrain en fonction 
 		de la liste de structure renvoyée par generer()"""
 		#Chargement des images (seule celle d'arrivée contient de la transparence)
 		mur = pygame.image.load(image_mur).convert()
@@ -59,21 +59,21 @@ class Arene:
 			num_ligne += 1
 			
 class Robot:
-	"""Classe permettant de créer un personnage"""
+	"""Classe permettant de créer un robot"""
 	def __init__(self, droite, gauche, haut, bas, niveau):
-		#Sprites du personnage
+		#Sprites du robot
 		self.droite = pygame.image.load(droite).convert_alpha()
 		self.gauche = pygame.image.load(gauche).convert_alpha()
 		self.haut = pygame.image.load(haut).convert_alpha()
 		self.bas = pygame.image.load(bas).convert_alpha()
-		#Position du personnage en cases et en pixels
+		#Position du robot en cases et en pixels
 		self.case_x = 7
 		self.case_y = 8
 		self.x = 210
 		self.y = 240
 		#Direction par défaut
 		self.direction = self.droite
-		#Niveau dans lequel le personnage se trouve 
+		#terrain dans lequel le robot se trouve 
 		self.niveau = niveau
 		
 	def avancer(self):
