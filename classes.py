@@ -35,12 +35,12 @@ class Arene:
 	def afficher(self, fenetre):
 		"""Méthode permettant d'afficher le terrain en fonction 
 		de la liste de structure renvoyée par generer()"""
-		#Chargement des images (seule celle d'arrivée contient de la transparence)
+		#Chargement des images 
 		mur = pygame.image.load(image_mur).convert()
 		depart = pygame.image.load(image_depart).convert()
 		arrivee = pygame.image.load(image_arrivee).convert_alpha()
 		
-		#On parcourt la liste du niveau
+		#On parcourt la liste
 		num_ligne = 0
 		for ligne in self.structure:
 			#On parcourt les listes de lignes
@@ -51,10 +51,10 @@ class Arene:
 				y = num_ligne * taille_sprite
 				if sprite == '1':		   #m = Mur
 					fenetre.blit(mur, (x,y))
-				elif sprite == 'd':		   #d = Départ
+				"""elif sprite == 'd':		   #d = Départ
 					fenetre.blit(depart, (x,y))
 				elif sprite == 'a':		   #a = Arrivée
-					fenetre.blit(arrivee, (x,y))
+					fenetre.blit(arrivee, (x,y))"""
 				num_case += 1
 			num_ligne += 1
 			
