@@ -45,8 +45,8 @@ while continuer:
 		niveau.afficher(fenetre)
 
 		#Création du robot
-		dk = Robot("images/dk_droite.png", "images/dk_gauche.png", 
-		"images/dk_haut.png", "images/dk_bas.png", niveau)
+		dk = Robot("images/robot_droite.png", "images/robot_gauche.png", 
+		"images/robot_haut.png", "images/robot_bas.png", niveau)
 
 				
 	#BOUCLE DE JEU
