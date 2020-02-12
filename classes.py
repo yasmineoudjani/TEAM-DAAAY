@@ -37,8 +37,8 @@ class Arene:
 		de la liste de structure renvoyée par generer()"""
 		#Chargement des images 
 		mur = pygame.image.load(image_mur).convert()
-		depart = pygame.image.load(image_depart).convert()
-		arrivee = pygame.image.load(image_arrivee).convert_alpha()
+		#depart = pygame.image.load(image_depart).convert()
+		#arrivee = pygame.image.load(image_arrivee).convert_alpha()
 		
 		#On parcourt la liste
 		num_ligne = 0
