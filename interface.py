@@ -33,18 +33,18 @@ while continuer:
 	continuer_jeu = 1
 	
 	choix='terrain1'
-	#on vérifie que le joueur a bien fait un choix de niveau
+	#on vérifie que le joueur a bien fait un choix du terrain
 	#pour ne pas charger s'il quitte
 	if choix != 0:
 		#Chargement du fond
 		fond = pygame.image.load(image_fond).convert()
 
-		#Génération d'un niveau à partir d'un fichier
+		#Génération d'un terrain à partir d'un fichier
 		niveau = Arene(choix)
 		niveau.generer()
 		niveau.afficher(fenetre)
 
-		#Création de Donkey Kong
+		#Création du robot
 		dk = Robot("images/dk_droite.png", "images/dk_gauche.png", 
 		"images/dk_haut.png", "images/dk_bas.png", niveau)
 
@@ -68,7 +68,7 @@ while continuer:
 				if event.key == K_ESCAPE:
 					continuer_jeu = 0
 					
-				#Touches de déplacement de Donkey Kong
+				#Touches de déplacement du robot
 				elif event.key == K_RIGHT:
 					dk.tourner(0)
 				elif event.key == K_LEFT:
