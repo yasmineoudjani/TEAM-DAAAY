@@ -1,18 +1,18 @@
-"""Classes du jeu de Labyrinthe Donkey Kong"""
+
 
 import pygame
 from pygame.locals import * 
 from constantes import *
 
 class Arene:
-	"""Classe permettant de créer un niveau"""
+	"""Classe permettant de créer un arene"""
 	def __init__(self, fichier):
 		self.fichier = fichier
 		self.structure = 0
 	
 	
 	def generer(self):
-		"""Méthode permettant de générer le niveau en fonction du fichier.
+		"""Méthode permettant de générer l'arene en fonction du fichier.
 		On crée une liste générale, contenant une liste par ligne à afficher"""	
 		#On ouvre le fichier
 		with open(self.fichier, "r") as fichier:
@@ -33,14 +33,14 @@ class Arene:
 	
 	
 	def afficher(self, fenetre):
-		"""Méthode permettant d'afficher le niveau en fonction 
+		"""Méthode permettant d'afficher l'arene en fonction 
 		de la liste de structure renvoyée par generer()"""
-		#Chargement des images (seule celle d'arrivée contient de la transparence)
+		#Chargement des images 
 		mur = pygame.image.load(image_mur).convert()
 		#depart = pygame.image.load(image_depart).convert()
 		#arrivee = pygame.image.load(image_arrivee).convert_alpha()
 		
-		#On parcourt la liste du niveau
+		#On parcourt la liste du terrain
 		num_ligne = 0
 		for ligne in self.structure:
 			#On parcourt les listes de lignes
@@ -59,21 +59,21 @@ class Arene:
 			num_ligne += 1
 			
 class Robot:
-	"""Classe permettant de créer un personnage"""
+	"""Classe permettant de créer un robot"""
 	def __init__(self, droite, gauche, haut, bas, niveau):
 		#Sprites du personnage
 		self.droite = pygame.image.load(droite).convert_alpha()
 		self.gauche = pygame.image.load(gauche).convert_alpha()
 		self.haut = pygame.image.load(haut).convert_alpha()
 		self.bas = pygame.image.load(bas).convert_alpha()
-		#Position du personnage en cases et en pixels
+		#Position du robot en cases et en pixels
 		self.case_x = 7
 		self.case_y = 8
 		self.x = 210
 		self.y = 240
 		#Direction par défaut
 		self.direction = self.droite
-		#Niveau dans lequel le personnage se trouve 
+		#Niveau dans lequel le robot se trouve 
 		self.niveau = niveau
 
 	def isMurD(self):
