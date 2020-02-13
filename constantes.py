@@ -1,4 +1,4 @@
-"""Constantes du jeu de Labyrinthe Donkey Kong"""
+
 
 #Paramètres de la fenêtre
 nombre_sprite_cote = 15
