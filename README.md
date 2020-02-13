@@ -8,3 +8,5 @@ pour installer une librairie sur les pc de la fac sans les droits administrateur
 
 puisque nous utilisons pygame :
  - pip install --user pygame
+ 
+- Les fichiers (terrain 1 , terrain 2) sont des fichiers textes.
