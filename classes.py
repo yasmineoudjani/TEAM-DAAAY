@@ -54,7 +54,7 @@ class Arene:
 			
 class Robot:
 	"""Classe permettant de créer un robot"""
-	def __init__(self, droite, gauche, haut, bas, niveau):
+	def __init__(self, droite, gauche, haut, bas, position):
 		#Sprites du personnage
 		self.droite = pygame.image.load(droite).convert_alpha()
 		self.gauche = pygame.image.load(gauche).convert_alpha()
@@ -67,30 +67,30 @@ class Robot:
 		self.y = 240
 		#Direction par défaut
 		self.direction = self.droite
-		#Niveau dans lequel le robot se trouve 
-		self.niveau = niveau
+		#Position dans lequel le robot se trouve 
+		self.position = position
 
 	def isMurD(self):
-		if self.niveau.structure[self.case_y][self.case_x+1] != '1':
+		if self.position.structure[self.case_y][self.case_x+1] != '1':
 			return True
 		return False
 	
 	def isMurG(self):
-		if self.niveau.structure[self.case_y][self.case_x-1] != '1':
+		if self.position.structure[self.case_y][self.case_x-1] != '1':
 			return True
 		return False
 	def isMurA(self):
-		if self.niveau.structure[self.case_y-1][self.case_x] != '1':
+		if self.position.structure[self.case_y-1][self.case_x] != '1':
 			return True
 		return False
 	def isMurR(self):
-		if self.niveau.structure[self.case_y+1][self.case_x] != '1':
+		if self.position.structure[self.case_y+1][self.case_x] != '1':
 			return True
 		return False	
 
 	def avancer(self):
 		if self.case_y > 0:
-			if self.niveau.structure[self.case_y-1][self.case_x] != '1':
+			if self.position.structure[self.case_y-1][self.case_x] != '1':
 				self.case_y -= 1
 				self.y = self.case_y * taille_sprite
 		self.direction = self.haut
@@ -98,7 +98,7 @@ class Robot:
         
 	def reculer(self):
 		if self.case_y < (nombre_sprite_cote - 1):
-		    if self.niveau.structure[self.case_y+1][self.case_x] != '1':
+		    if self.position.structure[self.case_y+1][self.case_x] != '1':
 		        self.case_y += 1
 		        self.y = self.case_y * taille_sprite
 		self.direction = self.bas
@@ -110,7 +110,7 @@ class Robot:
 			#Pour ne pas dépasser l'écran
 			if self.case_x < (nombre_sprite_cote - 1):
 				#On vérifie que la case de destination n'est pas un mur
-				if self.niveau.structure[self.case_y][self.case_x+1] != '1':
+				if self.position.structure[self.case_y][self.case_x+1] != '1':
 					#Déplacement d'une case
 					self.case_x += 1
 					#Calcul de la position "réelle" en pixel
@@ -120,7 +120,7 @@ class Robot:
 
 		if(s==1):
 			if self.case_x > 0:
-				if self.niveau.structure[self.case_y][self.case_x-1] != '1':
+				if self.position.structure[self.case_y][self.case_x-1] != '1':
 					self.case_x -= 1
 					self.x = self.case_x * taille_sprite
 			self.direction = self.gauche
