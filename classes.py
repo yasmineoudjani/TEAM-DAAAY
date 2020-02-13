@@ -51,10 +51,6 @@ class Arene:
 				y = num_ligne * taille_sprite
 				if sprite == '1':		   #m = Mur
 					fenetre.blit(mur, (x,y))
-				elif sprite == 'd':		   #d = Départ
-					fenetre.blit(depart, (x,y))
-				elif sprite == 'a':		   #a = Arrivée
-					fenetre.blit(arrivee, (x,y))
 				num_case += 1
 			num_ligne += 1
 			
