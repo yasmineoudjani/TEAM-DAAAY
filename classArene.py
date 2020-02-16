@@ -2,7 +2,7 @@ class Arene:
 	"""Classe permettant de créer une arene"""
 	def __init__(self, fichier):
 		self.fichier = fichier
-		self.structure = 0
+		self.structure = []
 		self.nbLigne = 0
 		self.nbColonne = 0
 	
@@ -30,6 +30,7 @@ class Arene:
 			self.structure = structure_niveau
 			#on met en mémoire le nombre de colonne
 			self.nbColonne = len(structure_niveau[0])
+		print("arene généré")
 
 	def getNbLigne(self):
 		return self.nbLigne
