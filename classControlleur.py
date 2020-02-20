@@ -31,13 +31,13 @@ class Controlleur:
 			if(capteur.Obstacle(arene)):
 				#on arrete le robot
 				robot.changementVitesse(0)
-		robot.avancer()
-	def sortieLab(self,capteur,arene):
+		
+	def sortieLab(self,capteur,arene,robot):
 
 		#si le robot est à l'arret 
-		if(robot.getVX() == 0 and robot.getVY() == 0):
+		if(robot.getVX() == 0.0 and robot.getVY() == 0.0):
 			#on vérifie qu'il n'y a rien devant le robot
-			if(not(capteur.obstacle(arene))):
+			if(not(capteur.Obstacle(arene))):
 				#on lui donne une vitesse de 1 case par unité de temps
 				robot.changementVitesse(1)
 				return

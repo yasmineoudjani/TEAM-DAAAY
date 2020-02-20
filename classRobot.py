@@ -1,10 +1,13 @@
 import math
+import pygame
+from pygame.locals import *
 
 class Robot:
         """Classe permettant de créer un personnage"""
-        def __init__(self,cX,cY,X,Y) :
+        def __init__(self,cX,cY,X,Y,haut,bas,droite,gauche) :
                 """int * int * float * float -> void
                 """
+                
                 #Position du personnage en cases et en coordonnée réelles
                 self.case_x = cX
                 self.case_y = cY
@@ -14,19 +17,29 @@ class Robot:
                 self.vY = 0.0
                 self.alpha = 0
 
+                """
+                self.droite = pygame.image.load(droite).convert_alpha()
+                self.gauche = pygame.image.load(gauche).convert_alpha()
+                self.haut = pygame.image.load(haut).convert_alpha()
+                self.bas = pygame.image.load(bas).convert_alpha()
+
+                self.direction=self.droite
+                """
+
         def avancer(self):
                 self.x += self.vX
                 self.y += self.vY
                 self.case_x = int(self.x)
                 self.case_y = int(self.y)
                 print("le robot avance vx=", self.vX , " vy=" , self.vY , "\n pox=" , self.x , " posy=" , self.y)
+                print("angle alpha=" , self.alpha)
 
         def tourner(self,angle):
                 vX = self.vX
                 vY = self.vY
                 self.vX = vX*math.cos(angle) - vY*math.sin(angle)
                 self.vY = vX*math.sin(angle) + vY*math.cos(angle)
-                self.alpha += angle%360
+                self.alpha = (self.alpha+angle)%(2*math.pi)
                 print("le robot tourne. nouvelle angle : ", self.alpha)
 
         def changementVitesse(self,d):
