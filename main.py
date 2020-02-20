@@ -9,7 +9,7 @@ import time
 
 arene = Arene("terrain2")
 arene.generer()
-robot = Robot(1,1,1.0,1.0,"images/robot_haut.png", "images/robot_bas.png","images/robot_droite.png", "images/robot_gauche.png")
+robot = Robot(1,1,1.0,1.0)
 capteur = Capteur(robot)
 controlleur = Controlleur()
 affichage = Affichage(arene,robot)

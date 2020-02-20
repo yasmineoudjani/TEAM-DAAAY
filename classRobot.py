@@ -4,7 +4,7 @@ from pygame.locals import *
 
 class Robot:
         """Classe permettant de créer un personnage"""
-        def __init__(self,cX,cY,X,Y,haut,bas,droite,gauche) :
+        def __init__(self,cX,cY,X,Y) :
                 """int * int * float * float -> void
                 """
                 
@@ -16,15 +16,6 @@ class Robot:
                 self.vX = 0.0
                 self.vY = 0.0
                 self.alpha = 0
-
-                """
-                self.droite = pygame.image.load(droite).convert_alpha()
-                self.gauche = pygame.image.load(gauche).convert_alpha()
-                self.haut = pygame.image.load(haut).convert_alpha()
-                self.bas = pygame.image.load(bas).convert_alpha()
-
-                self.direction=self.droite
-                """
 
         def avancer(self):
                 self.x += self.vX
