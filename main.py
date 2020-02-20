@@ -7,7 +7,7 @@ import pygame
 from pygame.locals import *
 import time
 
-arene = Arene("terrain2")
+arene = Arene("terrain1")
 arene.generer()
 robot = Robot(1,1,1.0,1.0)
 capteur = Capteur(robot)
