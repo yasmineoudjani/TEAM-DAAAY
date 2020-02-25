@@ -15,3 +15,7 @@ image_fond = "images/fond.jpg"
 image_mur = "images/mur.png"
 image_depart = "images/depart.png"
 image_arrivee = "images/arrivee.png"
+
+
+#constantes pour le controlleur
+distance_arret = 10

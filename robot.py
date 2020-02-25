@@ -62,5 +62,10 @@ class Robot:
                 return (self._v * math.sin(self._alpha))
 
         @property
+        def v(self):
+                return self._v
+        
+
+        @property
         def getAlpha(self):
                 return self._alpha

@@ -4,11 +4,11 @@
 
 import pygame
 from pygame.locals import *
-from Affichage import *
+from affichage import *
 from robot import *
-from Arene import *
+from arene import *
 from constantes import *
-from Capteur import *
+from capteur import *
 from controlleur import *
 
 

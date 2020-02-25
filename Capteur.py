@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
 from constantes import *
-from Arene import *
+from arene import *
 
 class Capteur:
     def __init__(self, niveau):
