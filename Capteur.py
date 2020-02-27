@@ -4,8 +4,9 @@ from constantes import *
 from arene import *
 
 class Capteur:
-    def __init__(self, niveau):
+    def __init__(self, niveau, robot):
         self.niveau = niveau
+        self.robot = robot
 
     """retourne le nombre de case avant un obstacle a droite"""
     def murD(self, case_x , case_y):
@@ -34,3 +35,7 @@ class Capteur:
         while self.niveau.structure[case_y+i][case_x] != '1':
             i=i+1
         return i
+
+
+    def obstacle(self):
+        y = robot.getVX / robot.getVY
