@@ -1,3 +1,2 @@
-# MARCHE SANS LA GESTION DES ANGLES ET DE LA VITESSE
-
-fichier interfaceSeparer.py avec robot se déplacant de facon autonome
+# Version avec l'affichage sans bug
+fonction à décomposer pour simplification du code
