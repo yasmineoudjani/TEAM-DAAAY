@@ -6,8 +6,8 @@ from arene import *
 from capteur import *
 
 
-class Controlleur:
-	""" classe premettant de créer un controlleur"""
+class Controleur:
+	""" classe premettant de créer un controleur"""
 
 	def __init__(self):
 		self.id=1
