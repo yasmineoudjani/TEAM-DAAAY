@@ -9,7 +9,7 @@ from robot import *
 from arene import *
 from constantes import *
 from capteur import *
-from controlleur import *
+from controleur import *
 
 
 choix='terrain2'
@@ -19,11 +19,11 @@ affichage=Affichage("images/robot_droite.png", "images/robot_gauche.png","images
 robot= Robot(30.0,30.0)
 affichage.chargement(niveau,robot)
 capteur = Capteur(niveau)
-controlleur = Controlleur()
+controleur = Controleur()
 
 while True:
 	#Limitation de vitesse de la boucle
 	pygame.time.Clock().tick(30)
 	robot.avancer()
-	controlleur.alea(capteur,niveau,robot)
+	controleur.alea(capteur,niveau,robot)
 	affichage.refresh(robot)
