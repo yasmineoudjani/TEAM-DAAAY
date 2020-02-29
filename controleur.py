@@ -28,7 +28,6 @@ class Controleur:
 		else:
 			#si il y a un obstacle sur la trajectoire du robot
 			print("le robot n'est pas à l'arrêt")
-			print(capteur.distanceObstacle())
 			if(capteur.distanceObstacle()<=distance_arret):
 				#on arrete le robot
 				robot.changementVitesse(0)

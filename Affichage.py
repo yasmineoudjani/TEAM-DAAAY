@@ -40,5 +40,16 @@ class Affichage:
         self.niveau.afficher(self.fenetre)
         self.fenetre.blit(self.robotDroite, (self.robot.CaseX-15, self.robot.CaseY-15)) #self.robot.direction = l'image dans la bonne direction
         pygame.display.flip()
+
+    def terrainConsole(self,terrain):
+        #On parcourt la liste du niveau
+        num_ligne = 0
+        for ligne in self.structure:
+            #On parcourt les listes de lignes
+            num_case = 0
+            for sprite in ligne:
+                print(sprite)
+                num_case += 1
+            num_ligne += 1
         
 	
