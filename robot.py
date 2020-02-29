@@ -4,6 +4,7 @@ from pygame.locals import *
 from point import *
 from vecteur import *
 from angle import *
+from constante import *
 
 class Robot:
         """Classe permettant de créer un personnage"""
@@ -28,6 +29,14 @@ class Robot:
                 """le robot prend la vitesse d donnée en paramètre
                 """
                 vecteurVitesse.update(d,self.angle)
+
+        def collision(self,arene):
+            """prend en parametre une arene et regarde si à la position du robot il y a collision entre le robot et un obstacle
+            renvoie true si il y a une collison, false sinon
+            """
+            if(arene.pixel[self.centre.y][self.centre.x] == mur):
+                return true
+            return false
         
         @property 
         def CaseX(self):
