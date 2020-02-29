@@ -16,14 +16,14 @@ choix='terrain2'
 niveau = Arene(choix)
 niveau.generer()
 affichage=Affichage("images/robot_droite.png", "images/robot_gauche.png","images/robot_haut.png", "images/robot_bas.png")
-robot= Robot(30.0,30.0)
+robot= Robot(60.0,60.0)
 affichage.chargement(niveau,robot)
-capteur = Capteur(niveau)
+capteur = Capteur(niveau,robot)
 controleur = Controleur()
 
 while True:
 	#Limitation de vitesse de la boucle
-	pygame.time.Clock().tick(30)
+	pygame.time.Clock().tick(1)
 	robot.avancer()
 	controleur.alea(capteur,niveau,robot)
 	affichage.refresh(robot)

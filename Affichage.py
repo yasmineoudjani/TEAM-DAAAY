@@ -31,14 +31,14 @@ class Affichage:
 
         self.fenetre.blit(self.fond, (0,0))
         niveau.afficher(self.fenetre)
-        self.fenetre.blit(self.robotDroite, (self.robot.CaseX+15, self.robot.CaseY+15))
+        self.fenetre.blit(self.robotDroite, (self.robot.CaseX-15, self.robot.CaseY-15))
         pygame.display.flip()
 
     def refresh(self, robot):
         self.robot = robot
         self.fenetre.blit(self.fond, (0,0))
         self.niveau.afficher(self.fenetre)
-        self.fenetre.blit(self.robotDroite, (self.robot.CaseX+15, self.robot.CaseY+15)) #self.robot.direction = l'image dans la bonne direction
+        self.fenetre.blit(self.robotDroite, (self.robot.CaseX-15, self.robot.CaseY-15)) #self.robot.direction = l'image dans la bonne direction
         pygame.display.flip()
         
 	

@@ -1,5 +1,5 @@
 from point import *
-class droite:
+class Droite:
     """ classe permettant de calculer l'équation d'une droite à partir de deux points"""
 
     def __init__(self,p1,p2):
