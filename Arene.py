@@ -7,6 +7,7 @@ class Arene:
 	def __init__(self, fichier):
 		self.fichier = fichier
 		self.structure = 0
+		self.pixel= 0
 
 
 	def generer(self):
@@ -28,6 +29,16 @@ class Arene:
 				structure_niveau.append(ligne_niveau)
 			#On sauvegarde cette structure
 			self.structure = structure_niveau
+
+			structpixel= []
+			for ligne in self.structure:
+				lignepixel=[]
+				for case in ligne :
+					for i in range(1,30):
+						lignepixel.append(case)
+				for i in range(1,30):
+					structpixel.append(lignepixel)
+			self.pixel=structpixel
 
 
 	def afficher(self, fenetre):
