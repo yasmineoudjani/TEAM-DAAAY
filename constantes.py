@@ -19,3 +19,7 @@ image_arrivee = "images/arrivee.png"
 
 #constantes pour le controlleur
 distance_arret = 10
+
+#constante pour l'arene
+vide = '0'
+obstacle = '1'
