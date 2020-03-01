@@ -31,14 +31,17 @@ class Arene:
 			self.structure = structure_niveau
 
 			structpixel= []
+			j =0
 			for ligne in self.structure:
 				lignepixel=[]
 				for case in ligne :
-					for i in range(1,30):
+					for i in range(0,30):
 						lignepixel.append(case)
-				for i in range(1,30):
+				for i in range(0,30):
 					structpixel.append(lignepixel)
+					j+=1
 			self.pixel=structpixel
+			print(len(self.pixel) , j)
 
 
 	def afficher(self, fenetre):

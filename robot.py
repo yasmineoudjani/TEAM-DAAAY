@@ -15,7 +15,7 @@ class Robot:
                 self.centre = Point(X,Y)
                 self.angle = Angle(0.0)
                 self.vecteurDirection = Vecteur(Point(0,0),Point(0,0))
-                self.vecteurDirection.update(10,self.angle)
+                self.vecteurDirection.update(30,self.angle)
 
         def avancer(self):
                 self.centre.update(self.vecteurVitesse)
@@ -26,8 +26,8 @@ class Robot:
                 a = Angle(angle)
                 self.vecteurVitesse.rotation(a)
                 self.vecteurDirection.rotation(a)
-                self.vecteurDirection.update(1,a)
                 self.angle.addition(a)
+                self.vecteurDirection.update(30,self.angle)
 
         def changementVitesse(self,d):
                 """le robot prend la vitesse d donnée en paramètre

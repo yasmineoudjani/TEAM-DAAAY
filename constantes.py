@@ -18,7 +18,7 @@ image_arrivee = "images/arrivee.png"
 
 
 #constantes pour le controlleur
-distance_arret = 50
+distance_arret = 40
 
 #constante pour l'arene
 vide = '0'
