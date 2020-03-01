@@ -21,16 +21,19 @@ class Capteur:
         """
         A = Point(self.robot.centre.x,self.robot.centre.y)
         B = Point(self.robot.centre.x + self.robot.vecteurDirection.vx ,self.robot.centre.y + self.robot.vecteurDirection.vy)
-    
         droite = Droite(A,B)
+
+        if(self.robot.angle.valeur < math.pi/2 or self.robot.angle.valeur > (3/2)*math.pi):
+            sens=1
+        else:
+            sens=-1
 
         x = (int)(self.robot.centre.x) 
         i = 0
         while self.niveau.pixel[(int)(droite.a * x + droite.b)][x] != obstacle:
-            x+=1
+            x+=sens
             i+=1
         
-        y =(int)(droite.a * i + droite.b)
-        distance = (int)(math.sqrt(i**2 + y**2))
-        print("l'obstacle se trouve à ",distance," pixel")
+        
+        distance = i/abs(math.cos(self.robot.angle.valeur))
         return distance
