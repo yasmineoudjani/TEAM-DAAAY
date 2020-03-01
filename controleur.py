@@ -9,24 +9,47 @@ from Capteur import *
 class Controleur:
 	""" classe premettant de créer un controleur"""
 
-	def __init__(self):
-		self.id=1
+	def __init__(self,robot):
+		self.robot=robot
 
-	def alea(self,capteur,arene,robot):
+	def alea(self,capteur,arene):
 		#si le robot est à l'arret
-		if((int)(robot.vecteurVitesse.v)==0):
+		if((int)(self.robot.vecteurVitesse.v)==0):
 			#on vérifie qu'il n'y a rien devant le robot
 			if(capteur.distanceObstacle()>distance_arret):
 				#on lui donne une vitesse de 1 case par unité de temps
-				robot.changementVitesse(15)
+				self.robot.changementVitesse(15)
 			else:
 				#on le fait tourner aléatoirement
 				c=random.random()
-				robot.tourner(c*(math.pi*2))	
+				self.robot.tourner(c*(math.pi*2))	
 
 		else:
 			#si il y a un obstacle sur la trajectoire du robot
 			if(capteur.distanceObstacle()<=distance_arret):
 				#on arrete le robot
-				robot.changementVitesse(0)
+				self.robot.changementVitesse(0)
+
+	def aleaLarge(self,capteur,arene):
+		#si le robot est à l'arret
+		if((int)(self.robot.vecteurVitesse.v)==0):
+			#on vérifie qu'il n'y a rien devant le robot
+			if(capteur.distanceObstacleLarge()>distance_arret):
+				#on lui donne une vitesse de 1 case par unité de temps
+				self.robot.changementVitesse(15)
+			else:
+				#on le fait tourner aléatoirement
+				c=random.random()
+				self.robot.tourner(c*(math.pi*2))	
+
+		else:
+			#si il y a un obstacle sur la trajectoire du robot
+			if(capteur.distanceObstacleLarge()<=distance_arret):
+				#on arrete le robot
+				self.robot.changementVitesse(0)
+
+	def set_motor_dps(self,dps):
+		self.robot.changementVitesse(15)
 		
+	def tourner(self,angle):
+		self.robot.tourner(angle)
