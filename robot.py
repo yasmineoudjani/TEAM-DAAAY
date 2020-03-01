@@ -38,10 +38,8 @@ class Robot:
             """prend en parametre une arene et regarde si à la position du robot il y a collision entre le robot et un obstacle
             renvoie true si il y a une collison, false sinon
             """
-            if(arene.pixel[self.centre.y][self.centre.x] == mur):
-                return true
-            return false
-        
+            return(arene.pixel[int(self.centre.y)][int(self.centre.x)] == obstacle)
+            
         @property 
         def CaseX(self):
                 return int(self.centre.x)

@@ -37,3 +37,28 @@ class Capteur:
         
         distance = i/abs(math.cos(self.robot.angle.valeur))
         return distance
+
+    def distanceObstacleLarge(self):
+        """retourne en pixel , la ditance du prochaine obstacle dans l'arene , dans la direction actuel du robot
+        """
+        A = Point(self.robot.centre.x,self.robot.centre.y)
+        B = Point(self.robot.centre.x + self.robot.vecteurDirection.vx ,self.robot.centre.y + self.robot.vecteurDirection.vy)
+        droite = Droite(A,B)
+        if(self.robot.angle.valeur < math.pi/2 or self.robot.angle.valeur > (3/2)*math.pi):
+            sens=1
+        else:
+            sens=-1
+
+        maxi = -1
+        for ori in range(-int(largeur_robot/2) , int(largeur_robot/2)):
+            x = (int)(self.robot.centre.x) 
+            i = 0
+            while self.niveau.pixel[(int)(droite.a * x + droite.b+ori)][x] != obstacle:
+                x+=sens
+                i+=1
+            if(i<maxi or maxi<0):
+                maxi = i
+        
+        
+        distance = maxi/abs(math.cos(self.robot.angle.valeur))
+        return distance

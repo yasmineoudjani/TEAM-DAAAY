@@ -1,4 +1,4 @@
-"""Constantes du jeu de Labyrinthe Donkey Kong"""
+import math
 
 #Paramètres de la fenêtre
 nombre_sprite_cote = 15
@@ -18,8 +18,18 @@ image_arrivee = "images/arrivee.png"
 
 
 #constantes pour le controlleur
-distance_arret = 40
+distance_arret = 30
 
 #constante pour l'arene
 vide = '0'
 obstacle = '1'
+
+
+#parametre pour tracer une figure 
+nb_cote = 3
+longeur_cote = 100
+angle_entre_cote = math.pi*2/3
+vitesse_robot = 10
+
+#constante de l'affichage du robot
+largeur_robot = 30
