@@ -1,4 +1,4 @@
-from point import *
+from geometrie import point
 class Droite:
     """ classe permettant de calculer l'équation d'une droite à partir de deux points"""
 

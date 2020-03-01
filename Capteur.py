@@ -3,10 +3,9 @@ import math
 from pygame.locals import *
 from constantes import *
 from Arene import *
-from droite import *
-from point import *
-from droite import *
-from vecteur import *
+
+from geometrie import *
+
 from constantes import *
 from robot import *
 
@@ -49,16 +48,16 @@ class Capteur:
         else:
             sens=-1
 
-        maxi = -1
+        mini = -1
         for ori in range(-int(largeur_robot/2) , int(largeur_robot/2)):
             x = (int)(self.robot.centre.x) 
             i = 0
             while self.niveau.pixel[(int)(droite.a * x + droite.b+ori)][x] != obstacle:
                 x+=sens
                 i+=1
-            if(i<maxi or maxi<0):
-                maxi = i
+            if(i<mini or mini<0):
+                mini = i
         
         
-        distance = maxi/abs(math.cos(self.robot.angle.valeur))
+        distance = mini/abs(math.cos(self.robot.angle.valeur))
         return distance

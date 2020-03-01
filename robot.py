@@ -1,9 +1,8 @@
 import math
 import pygame
 from pygame.locals import *
-from point import *
-from vecteur import *
-from angle import *
+from geometrie import *
+
 from constantes import *
 
 class Robot:
@@ -39,7 +38,7 @@ class Robot:
             renvoie true si il y a une collison, false sinon
             """
             return(arene.pixel[int(self.centre.y)][int(self.centre.x)] == obstacle)
-            
+
         @property 
         def CaseX(self):
                 return int(self.centre.x)
