@@ -1,5 +1,8 @@
-from point import *
-from angle import *
+
+
+from geometrie import point
+from geometrie import angle
+
 import math
 
 class Vecteur:

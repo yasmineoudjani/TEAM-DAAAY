@@ -36,7 +36,7 @@ class Controleur:
 			#on vérifie qu'il n'y a rien devant le robot
 			if(capteur.distanceObstacleLarge()>distance_arret):
 				#on lui donne une vitesse de 1 case par unité de temps
-				self.robot.changementVitesse(15)
+				self.robot.changementVitesse(5)
 			else:
 				#on le fait tourner aléatoirement
 				c=random.random()
