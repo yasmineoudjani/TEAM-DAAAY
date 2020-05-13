@@ -13,17 +13,17 @@ from Capteur import *
 from controleur import *
 
 
-choix='terrain2'
+choix='terrain1'
 niveau = Arene(choix)
 niveau.generer()
 affichage=Affichage("images/robot_droite.png", "images/robot_gauche.png","images/robot_haut.png", "images/robot_bas.png")
-robot= Robot(70.0,70.0)
+robot= Robot(200.0,100.0)
 affichage.chargement(niveau,robot)
 capteur = Capteur(niveau,robot)
 controleur = Controleur(robot)
 
 """partie pour bouger aléatoirement"""
-
+"""
 while True:
 	#Limitation de vitesse de la boucle
 	pygame.time.Clock().tick(20)
@@ -33,11 +33,10 @@ while True:
 			sys.exit()
 	controleur.aleaLarge(capteur,niveau)
 	affichage.refresh(robot)
-	
 print("collision")
-
-"""partie pour faire un carré"""
 """
+"""partie pour faire un carré"""
+
 for i in range(0,nb_cote):
 	pygame.time.Clock().tick(5)
 	controleur.set_motor_dps(vitesse_robot)
@@ -50,4 +49,5 @@ for i in range(0,nb_cote):
 		affichage.refresh(robot)
 	controleur.tourner(angle_entre_cote)
 	affichage.refresh(robot)
-"""
+
+

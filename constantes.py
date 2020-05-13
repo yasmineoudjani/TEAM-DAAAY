@@ -26,9 +26,9 @@ obstacle = '1'
 
 
 #parametre pour tracer une figure 
-nb_cote = 3
-longeur_cote = 100
-angle_entre_cote = math.pi*2/3
+nb_cote = 4
+longeur_cote = 50
+angle_entre_cote = math.pi/(nb_cote/2)
 vitesse_robot = 10
 
 #constante de l'affichage du robot
