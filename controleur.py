@@ -2,8 +2,8 @@ import random
 import math
 
 from robot import *
-from Arene import *
-from Capteur import *
+from arene import *
+from capteur import *
 
 
 class Controleur:

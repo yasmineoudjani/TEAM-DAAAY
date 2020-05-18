@@ -2,7 +2,7 @@ import pygame
 import math
 from pygame.locals import *
 from constantes import *
-from Arene import *
+from arene import *
 
 from geometrie import *
 
