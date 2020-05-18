@@ -31,7 +31,7 @@ while True:
 	if(robot.collision(niveau)):
 			print("le robot viens de se crasher")
 			sys.exit()
-	controleur.aleaLarge(capteur,niveau)
+	controleur.carre(6,capteur)
 	affichage.refresh(robot)
 	
 print("collision")
