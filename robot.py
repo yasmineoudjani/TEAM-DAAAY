@@ -16,7 +16,7 @@ class Robot:
                 self.vecteurDirection = Vecteur(Point(0,0),Point(0,0))
                 self.vecteurDirection.update(30,self.angle)
 
-        def avancer(self):
+        def update(self):
                 self.centre.update(self.vecteurVitesse)
                 
         def tourner(self,angle):

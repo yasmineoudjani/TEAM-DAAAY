@@ -27,27 +27,15 @@ controleur = Controleur(robot)
 while True:
 	#Limitation de vitesse de la boucle
 	pygame.time.Clock().tick(20)
-	robot.avancer()
+	robot.update()
 	if(robot.collision(niveau)):
 			print("le robot viens de se crasher")
 			sys.exit()
-	controleur.carre(6,capteur)
+	if(controleur.carre(6,capteur) > 0):
+		exit()
+
 	affichage.refresh(robot)
 	
 print("collision")
 
-"""partie pour faire un carré"""
-"""
-for i in range(0,nb_cote):
-	pygame.time.Clock().tick(5)
-	controleur.set_motor_dps(vitesse_robot)
-	for j in range(0,int(longeur_cote/vitesse_robot)):
-		pygame.time.Clock().tick(5)
-		robot.avancer()
-		if(robot.collision(niveau)):
-			print("le robot viens de se crasher")
-			sys.exit()
-		affichage.refresh(robot)
-	controleur.tourner(angle_entre_cote)
-	affichage.refresh(robot)
-"""
+

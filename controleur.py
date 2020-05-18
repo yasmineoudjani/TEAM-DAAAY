@@ -39,16 +39,23 @@ class Controleur:
 				self.compteur += 1
 
 	def carre(self , longueur , capteur):
+		cpt = self.compteur
+		cptnc = self.compteur_nb_cote
 		if(self.compteur_nb_cote < 4):
 			if(self.compteur == longueur):
 				self.set_motor_dps(0)
 				self.compteur = 0
-				self.tourner(math.pi/2)
+				self.tourner((math.pi/2.01))
 				self.compteur_nb_cote += 1
 			else:
 				self.avancer(capteur)
+
+			if(cpt==self.compteur and cptnc==self.compteur_nb_cote):
+				return 2
 			return 0
 		else:
+			if(cpt==self.compteur and cptnc==self.compteur_nb_cote):
+				return 2
 			return 1
 
 
