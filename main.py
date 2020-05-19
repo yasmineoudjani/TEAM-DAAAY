@@ -26,14 +26,14 @@ controleur = Controleur(robot)
 
 while True:
 	#Limitation de vitesse de la boucle
-	pygame.time.Clock().tick(20)
+	pygame.time.Clock().tick(5)
 	robot.update()
 	if(robot.collision(niveau)):
 			print("le robot viens de se crasher")
 			sys.exit()
 	if(controleur.carre(6,capteur) > 0):
 		exit()
-	print("tour de boucle")
+	"""print("tour de boucle")"""
 
 	affichage.refresh(robot)
 	
