@@ -33,6 +33,7 @@ while True:
 			sys.exit()
 	if(controleur.carre(6,capteur) > 0):
 		exit()
+	print("tour de boucle")
 
 	affichage.refresh(robot)
 	
