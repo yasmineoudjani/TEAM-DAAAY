@@ -22,6 +22,9 @@ affichage.chargement(niveau,robot)
 capteur = Capteur(niveau,robot)
 controleur = Controleur(robot)
 
+controleurBasic = ControleurBasic(robot,capteur)
+
+
 """partie pour bouger aléatoirement"""
 
 while True:

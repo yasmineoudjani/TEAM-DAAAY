@@ -1,6 +1,7 @@
 import time
 from capteur import *
 from robot import *
+from tmp import *
 
 class ControleurBasic:
 
@@ -69,9 +70,10 @@ class StrategySequentiel(ControleurBasic):
     def stop(self):
         self.cpt >= len(self.lst_strat)
 
+
 class StrategyCarre(StrategySequentiel):
     def __init__(self,robot,longueur):
-        self.lst_strat = [StrategyToutDroit(robot,longueur), StrategyTourner(robot,90), StrategyToutDroit(robot,longueur), StrategyTourner(robot,90),StrategyToutDroit(robot,longueur), StrategyTourner(robot,90),StrategyToutDroit(robot,longueur), StrategyTourner(robot,90),]
+        self.lst_strat = [StrategyToutDroit(robot,longueur), StrategyTourner(robot,90), StrategyToutDroit(robot,longueur), StrategyTourner(robot,90),StrategyToutDroit(robot,longueur), StrategyTourner(robot,90),StrategyToutDroit(robot,longueur), StrategyTourner(robot,90)]
         self.StrategySequentiel(lst_strat)
 
     def start(self):
@@ -83,5 +85,21 @@ class StrategyCarre(StrategySequentiel):
     self.StrategySequentiel.stop()
 
 
+class StrategyPolygoneRegulier(StrategySequentiel):
+    def __init__(self,robot,longueur,nbCote):
+        self.lst_strat = []
+        while(cpt<nbCote):
+            self.lst_strat.append(StrategyToutDroit(robot,longueur))
+            self.lst_strat.append(StrategyTourner(robot,180-(360/nbCote)))
+            cpt++
+        self.StrategySequentiel(lst_strat)
+
+    def start(self):
+        self.StrategySequentiel.start()
+    def update(self):
+        if not self.StrategySequentiel.stop():
+            self.StrategySequentiel.update()
+    def stop(self);
+    self.StrategySequentiel.stop()
     
 
