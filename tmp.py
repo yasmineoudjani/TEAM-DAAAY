@@ -19,7 +19,7 @@ class ControleurBasic:
     def start(self):
         pass
     def get_vitesse(self):
-        pass
+        self.robot.vitesse()
     def avancer(self,vitesse):
         self.robot.set_motor_dps(vitesse)
 
@@ -38,7 +38,7 @@ class StrategyToutDroit(ControleurBasic):
     def update(self):
         dt = time.clock_gettime(time.CLOCK_REALTIME) - self.timestamp
         self.distance_parcouru = self.distance_parcouru + dt*self.robot.vitesse()
-        self.timestamp = time.time()
+        self.timestamp = time.clock_gettime(time.CLOCK_REALTIME)
         if not self.stop():
             self.avancer(VITESSE_MAX)
         else: 
@@ -71,6 +71,17 @@ class StrategySequentiel(ControleurBasic):
 
 class StrategyCarre(StrategySequentiel):
     def __init__(self,robot,longueur):
-        self.lst_strat = [StrategyToutDroit(robot,longueur), StrategyTourner(robot,90), StrategyToutDroit(robot,longueur), ...]
+        self.lst_strat = [StrategyToutDroit(robot,longueur), StrategyTourner(robot,90), StrategyToutDroit(robot,longueur), StrategyTourner(robot,90),StrategyToutDroit(robot,longueur), StrategyTourner(robot,90),StrategyToutDroit(robot,longueur), StrategyTourner(robot,90),]
+        self.StrategySequentiel(lst_strat)
+
+    def start(self):
+        self.StrategySequentiel.start()
+    def update(self):
+        if not self.StrategySequentiel.stop():
+            self.StrategySequentiel.update()
+    def stop(self);
+    self.StrategySequentiel.stop()
+
+
     
 
