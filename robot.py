@@ -7,7 +7,7 @@ from constantes import *
 
 class Robot:
         """Classe permettant de créer un personnage"""
-        def __init__(self,X,Y) :
+        def __init__(self,X,Y,capteur) :
                 """int * int * float * float -> void
                 """
                 self.vecteurVitesse = Vecteur(Point(0,0),Point(0,0))
@@ -15,6 +15,7 @@ class Robot:
                 self.angle = Angle(0.0)
                 self.vecteurDirection = Vecteur(Point(0,0),Point(0,0))
                 self.vecteurDirection.update(30,self.angle)
+                self.capteur = capteur
 
         def update(self):
                 self.centre.update(self.vecteurVitesse)
