@@ -7,7 +7,7 @@ from constantes import *
 
 class Robot:
         """Classe permettant de créer un personnage"""
-        def __init__(self,X,Y,capteur) :
+        def __init__(self,X,Y) :
                 """int * int * float * float -> void
                 """
                 self.vecteurVitesse = Vecteur(Point(0,0),Point(0,0))
@@ -15,7 +15,6 @@ class Robot:
                 self.angle = Angle(0.0)
                 self.vecteurDirection = Vecteur(Point(0,0),Point(0,0))
                 self.vecteurDirection.update(30,self.angle)
-                self.capteur = capteur
 
         def update(self):
                 self.centre.update(self.vecteurVitesse)
@@ -39,6 +38,10 @@ class Robot:
             renvoie true si il y a une collison, false sinon
             """
             return(arene.pixel[int(self.centre.y)][int(self.centre.x)] == obstacle)
+
+        def vitesse():
+            """renvoie la vitesse"""
+            return self.vecteurVitesse.v
 
         @property 
         def CaseX(self):

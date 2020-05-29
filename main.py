@@ -17,7 +17,7 @@ choix='terrain2'
 niveau = Arene(choix)
 niveau.generer()
 affichage=Affichage("images/robot_droite.png", "images/robot_gauche.png","images/robot_haut.png", "images/robot_bas.png")
-robot= Robot(70.0,70.0)
+robot= Robot(70.0,70.0,capteur)
 affichage.chargement(niveau,robot)
 capteur = Capteur(niveau,robot)
 controleur = Controleur(robot)

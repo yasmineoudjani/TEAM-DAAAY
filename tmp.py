@@ -1,13 +1,16 @@
 import time
+from capteur import *
+from robot import *
 
 class ControleurBasic:
 
-    def __init__(self,robot):
+    def __init__(self,robot,capteur):
         self.robot = robot
+        self.capteur = capteur
 
     def stop(self):
-        if robot.ditsance()<1:
-            self.robot.arret_urgence()
+        if capteur.distanceObstacle()<distance_arret:
+            self.robot.changementVitesse(0)
             return True
         return False
     
@@ -27,18 +30,20 @@ class StrategyToutDroit(ControleurBasic):
         self.robot = robot
         self.timestamp = -1
         self.distance_parcouru = 0
+
     def start(self):
-        self.timestamp =  time.time()
+        self.timestamp =  time.clock_gettime(time.CLOCK_REALTIME)
         self.distance_parcouru = 0
 
     def update(self):
-        dt = time.time() - self.timestamp
+        dt = time.clock_gettime(time.CLOCK_REALTIME) - self.timestamp
         self.distance_parcouru = self.distance_parcouru + dt*self.robot.vitesse()
         self.timestamp = time.time()
         if not self.stop():
             self.avancer(VITESSE_MAX)
         else: 
             self.avancer(0)
+
     def stop(self):
         return super().stop() or self.distance_parcouru > self.distance
 
