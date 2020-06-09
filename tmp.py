@@ -74,16 +74,7 @@ class StrategySequentiel(ControleurBasic):
 class StrategyCarre(StrategySequentiel):
     def __init__(self,robot,longueur):
         self.lst_strat = [StrategyToutDroit(robot,longueur), StrategyTourner(robot,90), StrategyToutDroit(robot,longueur), StrategyTourner(robot,90),StrategyToutDroit(robot,longueur), StrategyTourner(robot,90),StrategyToutDroit(robot,longueur), StrategyTourner(robot,90)]
-        self.StrategySequentiel(lst_strat)
-
-    def start(self):
-        self.StrategySequentiel.start()
-    def update(self):
-        if not self.StrategySequentiel.stop():
-            self.StrategySequentiel.update()
-    def stop(self);
-    self.StrategySequentiel.stop()
-
+        """super()"""
 
 class StrategyPolygoneRegulier(StrategySequentiel):
     def __init__(self,robot,longueur,nbCote):
